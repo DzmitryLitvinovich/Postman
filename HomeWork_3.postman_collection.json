@@ -11,9 +11,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}?age={{age}}&weight={{weight}}&name={{name}}",
+					"raw": "{{url}}/object_info_1?age={{age}}&weight={{weight}}&name={{name}}",
 					"host": [
 						"{{url}}"
+					],
+					"path": [
+						"object_info_1"
 					],
 					"query": [
 						{
@@ -39,9 +42,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}?age={{age}}&salary={{salary}}&name={{name}}",
+					"raw": "{{url}}/object_info_2?age={{age}}&salary={{salary}}&name={{name}}",
 					"host": [
 						"{{url}}"
+					],
+					"path": [
+						"object_info_2"
 					],
 					"query": [
 						{
