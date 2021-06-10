@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "4dfddc55-0254-47af-bce4-24c2b37985b0",
+		"name": "HomeWork_2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "age_europe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"let jsonData = pm.response.json();\r",
+							"if (jsonData.age >=0 && jsonData.age <=17)\r",
+							"{\r",
+							"    pm.test('Person is underage',function()\r",
+							"    {\r",
+							"        pm.expect(jsonData.age_type).to.eql('underage');}\r",
+							"     )}\r",
+							"    else if (jsonData.age >=18 && jsonData.age <=49){\r",
+							"        pm.test('Person is adult', function(){\r",
+							"            pm.expect(jsonData.age_type).to.eql('adult')\r",
+							"        })\r",
+							"    }\r",
+							"    else if (jsonData.age >=50 && jsonData.age <=100){\r",
+							"        pm.test('Person is antiquity', function(){\r",
+							"            pm.expect(jsonData.age_type).to.eql('antiquity')\r",
+							"        })\r",
+							"    }\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "age",
+							"value": "{{age}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/age_europe",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"age_europe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "age_usa",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"let jsonData = pm.response.json();\r",
+							"if (jsonData.age >=0 && jsonData.age <=20)\r",
+							"{\r",
+							"    pm.test('Person is underage',function(){\r",
+							"        pm.expect(jsonData.age_type).to.eql('underage');\r",
+							"    })\r",
+							"    }\r",
+							"    else if (jsonData.age >=21 && jsonData.age <=49){\r",
+							"        pm.test('Person is adult', function(){\r",
+							"            pm.expect(jsonData.age_type).to.eql('adult')\r",
+							"        })\r",
+							"    }\r",
+							"    else if (jsonData.age >=50 && jsonData.age <=100){\r",
+							"        pm.test('Person is antiquity', function(){\r",
+							"            pm.expect(jsonData.age_type).to.eql('antiquity')\r",
+							"        })\r",
+							"    }\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "age",
+							"value": "{{age}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/age_usa",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"age_usa"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
